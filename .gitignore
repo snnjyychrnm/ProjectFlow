@@ -1,0 +1,29 @@
+﻿# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment files and secrets
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+
+# Build output
+**/dist/
+**/build/
+**/web-build/
+**/.expo/
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/
+
+# Generated mobile debug bundle
+/project-management-mobile/bundle-debug.js
