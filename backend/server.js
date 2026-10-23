@@ -16,7 +16,14 @@ if (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 32) {
 
 const app = express();
 
-app.use(cors({ origin: "http://localhost:5173" }));
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://project-flow-sandy.vercel.app",
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+}));
 app.use(express.json({ limit: "10kb" }));
 
 app.get("/api/health", async (req, res) => {
