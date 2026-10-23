@@ -27,11 +27,10 @@ app.get("/api/health", async (req, res) => {
 
     res.json({
       status: "ok",
-      message: "Backend and database are connected.",
       database: result.rows[0].database,
     });
   } catch (error) {
-    console.error("Database health check failed:", error.message);
+    console.error("Database health check failed:", error);
     res.status(500).json({
       status: "error",
       message: "Database connection failed.",
